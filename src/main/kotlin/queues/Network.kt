@@ -10,9 +10,8 @@ interface Forwarder<T> {
 
 class QueueNode<T>(
     private val queue: Queue<T>,
-    private val successor: Acceptor<T>
+    private val successor: Acceptor<T>,
 ) : Acceptor<T>, Forwarder<T> {
-
     override fun accept(item: T) {
         queue.enqueue(item)
     }

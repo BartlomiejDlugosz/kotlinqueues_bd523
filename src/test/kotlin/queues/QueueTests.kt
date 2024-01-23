@@ -77,8 +77,12 @@ class PrQueueTests {
 }
 
 data class Point(val coordX: Int, val coordY: Int)
+
 class PointComparator : Comparator<Point> {
-    override fun compare(p1: Point, p2: Point): Int {
+    override fun compare(
+        p1: Point,
+        p2: Point,
+    ): Int {
         val xComparison = p1.coordX.compareTo(p2.coordX)
         return if (xComparison != 0) {
             xComparison
